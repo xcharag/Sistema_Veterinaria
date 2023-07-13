@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Vet_la_finca.Core
 {
-    internal class ObsewrvableObject : INotifyPropertyChanged //This Inotify is for updating the UI when biding
+    internal class ObservableObject : INotifyPropertyChanged //This Inotify is for updating the UI when biding
     {
         public event PropertyChangedEventHandler? PropertyChanged; //This implements the PropertyChanged method
 

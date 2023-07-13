@@ -13,7 +13,6 @@
     <Folder Include="MWM\Model\" />
     <Folder Include="MWM\ViewModel\" />
     <Folder Include="MWM\View\" />
-    <Folder Include="Theme\" />
   </ItemGroup>
 
 </Project>
