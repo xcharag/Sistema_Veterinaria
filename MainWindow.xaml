@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Vet_la_finca"
+        xmlns:viewModel="clr-namespace:Vet_la_finca.MWM.ViewModel"
         mc:Ignorable="d"
         Height="600" Width="920" 
         WindowStartupLocation="CenterScreen"
@@ -11,7 +12,11 @@
         ResizeMode="NoResize"
         Background="Transparent"
         AllowsTransparency="True">
-    
+
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+
     <Border 
         Background="#008F8D"
         CornerRadius="20">
@@ -39,21 +44,25 @@
                     Height="50"
                     Foreground="White"
                     FontSize="14"
-                    Style="{StaticResource MenuButtonTheme}"/>
+                    Style="{StaticResource MenuButtonTheme}"
+                    IsChecked="True"
+                    Command="{Binding HomeViewCommand}"/>
 
                 <RadioButton
                     Content="Ventas"
                     Height="50"
                     Foreground="White"
                     FontSize="14"
-                    Style="{StaticResource MenuButtonTheme}"/>
+                    Style="{StaticResource MenuButtonTheme}"
+                    Command="{Binding VentasViewCommand}"/>
 
                 <RadioButton
                     Content="Baños/Peluqueria"
                     Height="50"
                     Foreground="White"
                     FontSize="14"
-                    Style="{StaticResource MenuButtonTheme}"/>
+                    Style="{StaticResource MenuButtonTheme}"
+                    Command="{Binding BanosViewCommand}"/>
 
                 <RadioButton
                     Content="Mascotas"
@@ -86,7 +95,8 @@
 
             <ContentControl Grid.Row="1"
                             Grid.Column="1"
-                            Margin="10"/>
+                            Margin="10"
+                            Content="{Binding CurrentView}"/>
 
         </Grid>
 
