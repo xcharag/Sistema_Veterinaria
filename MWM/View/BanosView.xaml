@@ -6,9 +6,31 @@
              xmlns:local="clr-namespace:Vet_la_finca.MWM.View"
              mc:Ignorable="d" 
              d:DesignHeight="505" d:DesignWidth="700">
-    <StackPanel>
-        <TextBlock Text="Hola esto es banos y peluqueria"
+    <Border>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="358"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Atencion Baños/Peluqueria"
                    Foreground="White"
-                   FontSize="28"/>
-    </StackPanel>
+                   FontSize="28"
+                   Padding="10,0,0,0"/>
+
+            <StackPanel Grid.Row="1">
+                <StackPanel Orientation="Horizontal" Height="75">
+                    <Button x:Name="selectmascot" Content="Seleccionar Mascota" Background="#FFFFB788" Style="{StaticResource CustomButtonStyle}" Width="135" Height="45" Margin="20,5,5,5"/>
+                    <Button x:Name="createmascot" Content="Crear Mascota" Background="#FFFFB788" Style="{StaticResource CustomButtonStyle}" Width="135" Height="45" Margin="20,5,5,5"/>
+                </StackPanel>
+            </StackPanel>
+
+            <TextBox Style="{StaticResource TextBoxTheme}" TextChanged="TextBox_TextChanged_1" Margin="57,24,277,431" Grid.Row="1" />
+        </Grid>
+    </Border>
 </UserControl>

@@ -1,0 +1,48 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Define your color resources here -->
+    <Color x:Key="TextBoxBorderBrush">#CCCCCC</Color>
+    <Color x:Key="TextBoxBackground">#F2F2F2</Color>
+    <Color x:Key="TextBoxForeground">#333333</Color>
+    <Color x:Key="TextBoxPlaceholderColor">#999999</Color>
+    <Color x:Key="TextBoxCaretColor">#333333</Color>
+    <Color x:Key="TextBoxSelectionColor">#3399FF</Color>
+
+    <!-- Define your SolidColorBrush resources here -->
+    <SolidColorBrush x:Key="TextBoxBorderBrushBrush" Color="{StaticResource TextBoxBorderBrush}" />
+    <SolidColorBrush x:Key="TextBoxBackgroundBrush" Color="{StaticResource TextBoxBackground}" />
+    <SolidColorBrush x:Key="TextBoxForegroundBrush" Color="{StaticResource TextBoxForeground}" />
+    <SolidColorBrush x:Key="TextBoxPlaceholderColorBrush" Color="{StaticResource TextBoxPlaceholderColor}" />
+    <SolidColorBrush x:Key="TextBoxCaretColorBrush" Color="{StaticResource TextBoxCaretColor}" />
+    <SolidColorBrush x:Key="TextBoxSelectionColorBrush" Color="{StaticResource TextBoxSelectionColor}" />
+
+    <Style x:Key="TextBoxTheme" TargetType="TextBox">
+        <Setter Property="Background" Value="{StaticResource TextBoxBackgroundBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource TextBoxForegroundBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource TextBoxBorderBrushBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Padding" Value="5" />
+        <Setter Property="FontFamily" Value="Segoe UI, Arial, sans-serif" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="CaretBrush" Value="{StaticResource TextBoxCaretColorBrush}" />
+        <Setter Property="SelectionBrush" Value="{StaticResource TextBoxSelectionColorBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="5">
+                        <ScrollViewer x:Name="PART_ContentHost"
+                                      Margin="0"
+                                      Background="Transparent"
+                                      Padding="{TemplateBinding Padding}" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+</ResourceDictionary>
